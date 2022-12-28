@@ -3,12 +3,13 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
   
 const firebaseConfig = {
-  apiKey: "AIzaSyAI9XT01joN_PvEZ_3aoBhJQUuA77f1uDc",
-  authDomain: "horror-db-app-22ab4.firebaseapp.com",
-  projectId: "horror-db-app-22ab4",
-  storageBucket: "horror-db-app-22ab4.appspot.com",
-  messagingSenderId: "55227896538",
-  appId: "1:55227896538:web:ad048cf4e7818c9fafcbe3"
+  apiKey: "AIzaSyBgVb_aS-kLYP_r4H2yeIVrp1jm10tQPFA",
+  authDomain: "ecomm-ed0bd.firebaseapp.com",
+  projectId: "ecomm-ed0bd",
+  storageBucket: "ecomm-ed0bd.appspot.com",
+  messagingSenderId: "60761764131",
+  appId: "1:60761764131:web:7f1f912e73b44703789c96",
+  measurementId: "G-RZ4K0VBPXK"
 };
 
 // Initialize Firebase

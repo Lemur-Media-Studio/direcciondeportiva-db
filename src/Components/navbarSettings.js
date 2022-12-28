@@ -6,18 +6,18 @@ export const navbarSettings = [
     },
     {
         id: 1,
-        label: 'Sign In',
-        route: '/registration'
+        label: 'Nuevo Perfil',
+        route: '/new-profile'
     },
     {
         id: 2,
-        label: 'Add Movies',
-        route: 'add-movies'
+        label: 'Agregar a Plantilla',
+        route: 'add-to-squad'
     },
     {
         id: 3,
-        label: 'Edit Movies',
-        route: 'edit-movies'
+        label: 'Agregar a Staff',
+        route: 'add-to-staff'
     },
     {
         id: 4,
