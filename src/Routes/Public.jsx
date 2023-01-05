@@ -10,7 +10,7 @@ function Public(){
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/add-to-squad' element={<AddToSquad />} />
-            <Route path='/movies' element={<Movies />} />
+            <Route path='/squad' element={<Movies />} />
             <Route path='/movies/:id' element={<MovieDetails />} />
         </Routes>
     )

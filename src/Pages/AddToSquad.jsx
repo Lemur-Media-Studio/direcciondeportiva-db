@@ -9,7 +9,7 @@ import SaveIcon from '@mui/icons-material/Save';
 import { useForm } from "react-hook-form";
 import firebase from '../Config/firebaseConfig'
 import { useState } from 'react';
-import { languages, maritalStatusValues, childsValues, positionValues, footValues, tecnicoValues, mentalValues, fisicoValues, gkValues, contractValues } from '../Utils/playersInfo';
+import { languages, maritalStatusValues, childsValues, positionValues, footValues, tecnicoValues, mentalValues, fisicoValues, gkValues } from '../Utils/playersInfo';
 import './AddToSquadStyle.css';
 import Grid from '@mui/material/Grid';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -37,15 +37,20 @@ function AddToSquad(){
         setPosition(event.target.value);
     };
 
-    const [foot, setFoot] = useState('');
+    const [secondPosition, setSecondPosition] = useState('');
     const handleChange5 = (event) => {
+        setSecondPosition(event.target.value);
+    };
+
+    const [foot, setFoot] = useState('');
+    const handleChange6 = (event) => {
         setFoot(event.target.value);
     };
 
-    const [contract, setContract] = useState('');
+/*     const [contract, setContract] = useState('');
     const handleChange6 = (event) => {
         setContract(event.target.value);
-    };
+    }; */
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = async data => {
@@ -60,13 +65,10 @@ function AddToSquad(){
     };
 
     return(
-        <Container sx={{mt:5}}>
-            <div>{errors.name && <span>Movie title is required</span>}</div>
-            <div>{errors.img && <span>Movie image is required</span>}</div>
-            <div>{errors.director && <span>Movie director is required</span>}</div>
-            <div>{errors.year && <span>Movie year is required</span>}</div>
-            <div>{errors.genre && <span>Movie genre is required</span>}</div>
-            <div>{errors.score && <span>Movie score is required</span>}</div>
+        <Container sx={{mt:5, color:'#fff'}}>
+            <div>{errors.name && <span>Ingresar nombre</span>}</div>
+            <div>{errors.lastName && <span>Ingresar apellido</span>}</div>
+
             <Box
             component="form"
             onSubmit={handleSubmit(onSubmit)}
@@ -79,15 +81,16 @@ function AddToSquad(){
                 <div>
                     <h2>DATOS PERSONALES</h2>
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch', color:'white !important'}}
                         required
                         id="outlined-required"
-                        label={"Nombre"}
+                        label="Nombre"
                         {...register("name", { required: true })}
                     /> 
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
+                        borderColor='#fff'
                         required
                         id="outlined-required"
                         label="Apellido"
@@ -96,66 +99,57 @@ function AddToSquad(){
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         required
                         id="outlined-required"
                         label="IMG"
                         defaultValue=""
-                        {...register("img", { required: true })}
+                        {...register("img")}
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         required
                         id="outlined-required"
                         label="Fecha de nacimiento"
                         defaultValue=""
-                        {...register("dob", { required: true })}
+                        {...register("dob")}
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         required
                         id="outlined-required"
                         label="Edad"
                         defaultValue=""
-                        {...register("age", { required: true })}
+                        {...register("age")}
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         required
                         id="outlined-required"
                         label="Nacionalidad"
                         defaultValue=""
-                        {...register("pob", { required: true })}
+                        {...register("pob")}
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         required
                         id="outlined-required"
                         label="Segunda nacionalidad"
                         defaultValue=""
-                        {...register("secondCitizenship", { required: true })}
+                        {...register("secondCitizenship")}
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
-                        required
-                        id="outlined-required"
-                        label="Edad"
-                        defaultValue=""
-                        {...register("age", { required: true })}
-                    />
-
-                    <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         required
                         id="outlined-select-currency"
                         select
                         label="Idiomas"
-                        {...register("languages", { required: true })}
+                        {...register("languages")}
                         value={language}
                         onChange={handleChange}
                     >
@@ -167,12 +161,12 @@ function AddToSquad(){
                     </TextField>
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         required
                         id="outlined-select-currency"
                         select
                         label="Estado civil"
-                        {...register("maritalStatus", { required: true })}
+                        {...register("maritalStatus")}
                         value={maritalStatus}
                         onChange={handleChange2}
                     >
@@ -184,12 +178,12 @@ function AddToSquad(){
                     </TextField>
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         required
                         id="outlined-select-currency"
                         select
                         label="Hijos"
-                        {...register("childs", { required: true })}
+                        {...register("childs")}
                         value={childs}
                         onChange={handleChange3}
                     >
@@ -205,7 +199,7 @@ function AddToSquad(){
                     <h2>PERFIL FUTBOLÍSTICO</h2>
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-select-currency"
                         select
                         label="Posición natural"
@@ -221,13 +215,13 @@ function AddToSquad(){
                     </TextField>
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-select-currency"
                         select
                         label="Posición secundaria"
                         {...register("secondPosition")}
-                        value={position}
-                        onChange={handleChange4}
+                        value={secondPosition}
+                        onChange={handleChange5}
                     >
                     {positionValues.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
@@ -237,13 +231,13 @@ function AddToSquad(){
                     </TextField>
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-select-currency"
                         select
                         label="Pierna hábil"
                         {...register("foot")}
                         value={foot}
-                        onChange={handleChange5}
+                        onChange={handleChange6}
                     >
                     {footValues.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
@@ -252,8 +246,10 @@ function AddToSquad(){
                     ))}
                     </TextField>
 
+                    <FormLabel sx={{mt: 5}} component="legend">FÍSICO</FormLabel>
+
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '14ch'}}
                         id="outlined-required"
                         label="Altura"
                         defaultValue=""
@@ -261,7 +257,15 @@ function AddToSquad(){
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '14ch'}}
+                        id="outlined-required"
+                        label="Peso ideal"
+                        defaultValue=""
+                        {...register("idealWeight")}
+                    />
+
+                    <TextField
+                        sx={{width: '14ch'}}
                         id="outlined-required"
                         label="Peso"
                         defaultValue=""
@@ -282,7 +286,7 @@ function AddToSquad(){
                                             value={option.value}
                                             control={<Checkbox />}
                                             label={option.value}
-                                            {...register("about")}
+                                            {...register("technicalAttributes")}
                                             labelPlacement="right"
                                         />
                                     </li>
@@ -299,7 +303,7 @@ function AddToSquad(){
                                             value={option.value}
                                             control={<Checkbox />}
                                             label={option.value}
-                                            {...register("about")}
+                                            {...register("mentalAttributes")}
                                             labelPlacement="right"
                                         />
                                     </li>
@@ -316,7 +320,7 @@ function AddToSquad(){
                                             value={option.value}
                                             control={<Checkbox />}
                                             label={option.value}
-                                            {...register("about")}
+                                            {...register("physicalAttributes")}
                                             labelPlacement="right"
                                         />
                                     </li>
@@ -333,7 +337,7 @@ function AddToSquad(){
                                             value={option.value}
                                             control={<Checkbox />}
                                             label={option.value}
-                                            {...register("about")}
+                                            {...register("gkAttributes")}
                                             labelPlacement="right"
                                         />
                                     </li>
@@ -359,15 +363,89 @@ function AddToSquad(){
                     <h2>CONTRATO</h2>
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
+                        id="outlined-required"
+                        label="Salario bruto"
+                        defaultValue=""
+                        {...register("salary")}
+                    />
+
+                    <TextField
+                        sx={{width: '24ch'}}
+                        id="outlined-required"
+                        label="Alta en SS"
+                        defaultValue=""
+                        {...register("socialSecurity")}
+                    />
+
+                    <TextField
+                        sx={{width: '24ch'}}
+                        id="outlined-required"
+                        label="Comienzo"
+                        defaultValue=""
+                        {...register("contractStarts")}
+                    />
+
+                    <TextField
+                        sx={{width: '24ch'}}
+                        id="outlined-required"
+                        label="Final"
+                        defaultValue=""
+                        {...register("contractEnds")}
+                    />
+
+                    <TextField
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label="Agente"
                         defaultValue=""
                         {...register("agent")}
                     />
 
+                    <FormLabel sx={{mt: 5}} component="legend">PRIMAS</FormLabel>
+
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
+                        id="outlined-required"
+                        label="Portería en 0"
+                        defaultValue=""
+                        {...register("notConceedBonus")}
+                    />
+
+                    <TextField
+                        sx={{width: '24ch'}}
+                        id="outlined-required"
+                        label="Asistencia"
+                        defaultValue=""
+                        {...register("assisstBonus")}
+                    />
+
+                    <TextField
+                        sx={{width: '24ch'}}
+                        id="outlined-required"
+                        label="Gol"
+                        defaultValue=""
+                        {...register("goalBonus")}
+                    />
+
+                    <TextField
+                        sx={{width: '24ch'}}
+                        id="outlined-required"
+                        label="Clasificar a Playoff"
+                        defaultValue=""
+                        {...register("playoffBonus")}
+                    />
+
+                    <TextField
+                        sx={{width: '24ch'}}
+                        id="outlined-required"
+                        label="Ganar la Liga"
+                        defaultValue=""
+                        {...register("leagueBonus")}
+                    />
+
+{/*                     <TextField
+                        sx={{width: '24ch'}}
                         id="outlined-select-currency"
                         select
                         label="Situación contractual"
@@ -383,7 +461,7 @@ function AddToSquad(){
                     </TextField>
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label="Contratado por"
                         defaultValue=""
@@ -391,19 +469,19 @@ function AddToSquad(){
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label="Cedido a"
                         defaultValue=""
                         {...register("loanTo")}
-                    />
+                    /> */}
 
                     <div className='line'></div>
 
                     <h2>CONTACTO Y LINKS</h2>
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label={<Phone />}
                         defaultValue=""
@@ -411,7 +489,7 @@ function AddToSquad(){
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label={<AlternateEmail />}
                         defaultValue=""
@@ -421,7 +499,7 @@ function AddToSquad(){
                     <FormLabel sx={{mt: 5}} component="legend">REDES SOCIALES</FormLabel>
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label={<FacebookIcon />}
                         defaultValue=""
@@ -429,7 +507,7 @@ function AddToSquad(){
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label={<Instagram />}
                         defaultValue=""
@@ -437,7 +515,7 @@ function AddToSquad(){
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label={<Twitter />}
                         defaultValue=""
@@ -447,7 +525,7 @@ function AddToSquad(){
                     <FormLabel sx={{mt: 5}} component="legend">LINKS</FormLabel>
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label="Transfermarkt"
                         defaultValue=""
@@ -455,7 +533,7 @@ function AddToSquad(){
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label="Besoccer"
                         defaultValue=""
@@ -463,7 +541,7 @@ function AddToSquad(){
                     />
 
                     <TextField
-                        sx={{width: '30ch'}}
+                        sx={{width: '24ch'}}
                         id="outlined-required"
                         label={<YouTube />}
                         defaultValue=""
@@ -482,21 +560,20 @@ function AddToSquad(){
                             multiline
                             rows={6}
                             defaultValue=""
-                            {...register("incidents", { required: true })}
+                            {...register("incidents")}
                         />
                     </div>
 
                     <div>
                     <Button
                         type='submit'
-                        sx={{mt: 5, mb:5}}
+                        sx={{mt: 5, mb:5, backgroundColor:'#02e7d5 !important', color:'#202020 !important'}}
                         size="small"
-                        color="secondary"
                         loadingPosition="start"
                         startIcon={<SaveIcon />}
                         variant="contained"
                         >
-                        Save
+                        Guardar
                     </Button>
                     </div>
 

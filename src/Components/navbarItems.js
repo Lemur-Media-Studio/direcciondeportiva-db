@@ -1,18 +1,18 @@
 export const navbarItems = [
     {
         id: 0,
-        label: 'Home',
+        label: 'Inicio',
         route: '/'
     },
     {
         id: 1,
-        label: 'Movies',
-        route: '/movies'
+        label: 'Plantilla',
+        route: '/squad'
     },
     {
         id: 2,
-        label: 'Series',
-        route: '/series'
+        label: 'Staff',
+        route: '/staff'
     },
     
 ]

@@ -1,5 +1,5 @@
 .line{
-    border-top: solid 2px rgba(204, 204, 204, 0.616) !important;
+    border-top: solid 1px rgba(255, 255, 255, 0.425) !important;
     margin-top: 50px !important;
     margin-bottom: 50px;
 }
@@ -9,6 +9,66 @@ li{
 }
 
 .attributes{
-    background-color: rgba(211, 211, 211, 0.164);
+    background-color: #02e7d4a9;
     border: solid 1px rgba(204, 204, 204, 0.616);
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    border-color: #02e7d5 !important;
+    color: #fff !important;
+}
+
+.css-kr9fz6-MuiFormLabel-root{
+    color: rgba(255, 255, 255, 0.425) !important;
+}
+
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked, .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate{
+    color: #202020 !important;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+    background-color: #02e7d5 !important;
+    color: #020202 !important;
+    border-bottom: #020202 1px solid !important;
+    padding: 10px !important;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:last-of-type{
+    border-bottom: none !important;
+}
+
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+    color: #fff !important;
+    text-align: left !important;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+    padding: 0px !important;
+    background-color: #02e7d5 !important;
+    border: transparent solid 2px !important;
+    border-radius: 5px !important;
+}
+
+.css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root{
+    color: #fff !important;
+}
+
+input{
+    color: #fff !important;
+}
+
+input:-internal-autofill-selected {
+    appearance: none !important;
+    background-image: none;
+    background-color: #020202 !important;
+    color: #fff !important;
+}
+
+
+label{
+    color: #fff !important;
+}
+
+#outlined-select-currency{
+    color: #fff !important;
 }
