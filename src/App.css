@@ -8,8 +8,7 @@
 }
 
 body{
-  background: rgb(2,231,213);
-  background: linear-gradient(148deg, rgba(2,231,213,1) 0%, rgba(2,231,213,1) 5%, rgba(32,32,32,1) 5%);
+  background: linear-gradient(102deg, #555555 1%, #202020 3%, #121212 6%, #101010 70%, rgba(8, 3, 17, 0.952) 20%);
 }
 
 /* h2{
@@ -42,7 +41,7 @@ h4{
 }
 
 .App-link {
-  color: #61dafb;
+  color: #fff;
 }
 
 @keyframes App-logo-spin {

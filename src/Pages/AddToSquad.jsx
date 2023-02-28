@@ -278,7 +278,7 @@ function AddToSquad(){
                         </Grid>
 
                         <Grid xs={3}>
-                            <FormLabel sx={{mt: 2, pl:5}} component="legend">TÉCNICO</FormLabel>
+                            <FormLabel sx={{mt: 2, pl:5}} component="legend" className='attributes-label'>TÉCNICO</FormLabel>
                             <ul>    
                                 {tecnicoValues.map((option) => (
                                     <li>
@@ -295,7 +295,7 @@ function AddToSquad(){
                         </Grid>
 
                         <Grid xs={3}>
-                            <FormLabel sx={{mt: 2, pl:5}} component="legend">MENTAL</FormLabel>
+                            <FormLabel sx={{mt: 2, pl:5}} component="legend" className='attributes-label'>MENTAL</FormLabel>
                             <ul>    
                                 {mentalValues.map((option) => (
                                     <li>
@@ -312,7 +312,7 @@ function AddToSquad(){
                         </Grid>
 
                         <Grid xs={3}>
-                            <FormLabel sx={{mt: 2, pl:5}} component="legend">FÍSICO</FormLabel>
+                            <FormLabel sx={{mt: 2, pl:5}} component="legend" className='attributes-label'>FÍSICO</FormLabel>
                             <ul>    
                                 {fisicoValues.map((option) => (
                                     <li>
@@ -329,7 +329,7 @@ function AddToSquad(){
                         </Grid>
 
                         <Grid xs={3}>
-                            <FormLabel sx={{mt: 2, pl:5}} component="legend">PORTERO</FormLabel>
+                            <FormLabel sx={{mt: 2, pl:5}} component="legend" className='attributes-label'>PORTERO</FormLabel>
                             <ul>    
                                 {gkValues.map((option) => (
                                     <li>
@@ -567,7 +567,7 @@ function AddToSquad(){
                     <div>
                     <Button
                         type='submit'
-                        sx={{mt: 5, mb:5, backgroundColor:'#02e7d5 !important', color:'#202020 !important'}}
+                        sx={{mt: 5, mb:5, backgroundColor:'#9b0181 !important', color:'#fff !important'}}
                         size="small"
                         loadingPosition="start"
                         startIcon={<SaveIcon />}

@@ -39,7 +39,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" sx={{backgroundColor:'#02e7d5', color:'#000'}}>
+    <AppBar position="static" sx={{background:'linear-gradient(100deg, rgb(75,44,107) 4%, rgb(55,24,97) 8%, rgb(25,14,67) 75%, rgb(16, 5, 32) 5%)', color:'#fff'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <SportsSoccerIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -121,7 +121,7 @@ function Navbar() {
               <Button as={Link} to={page.route}
                 key={page.id}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: '#000', display: 'block', textDecoration:'none' }}
+                sx={{ my: 2, display: 'block', textDecoration:'none', color:'#fff' }}
               >
                 {page.label}
               </Button>
